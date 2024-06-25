@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/app.css" type="text/css" />
+	<link rel="stylesheet" href="../../css/app_tb.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/app_pc.css" type="text/css" />
+	<link rel="stylesheet" href="../../css/animacion.css" type="text/css" />
+    <title>THE PRINT ART</title>
+</head>
+    <body>
+        <header id="cabecera">
+            <input type="checkbox" class="checkbox" id="menu-toggle" />
+            <label for="menu-toggle" class="menu-toggle center">&equiv;</label>
+                <nav id="menuPrincipal">
+                    <a class="opcion" href="../../index.html">Inicio</a>
+                    <a class="opcion" href="#art">Arte</a>
+                    <a class="opcion" href="#Sobre">Sobre Nosotros</a>
+                    <a class="opcion" href="../../html/tienda.html">Tienda</a>
+                    <a class="opcion" href="#contacto">Contáctanos</a>
+                    <div id="menuUsuario">
+                        <label v-if="productoCarrito>0" class="notiCar">{{productoCarrito}}</label>
+                        <a class="opcion" href="../carrito.html"><img src="../../img/ico/cart.png" alt=""></a>
+                    </div>
+                </nav>
+        </header>
+
+        <section class="contenido" id="Tienda">
+            <h2 class="center">TIENDA</h2>
+            
+            <article v-for="producto in productos" v-if="producto.id==4" class="marco">
+                <a href="">
+                    <figcaption>
+                        <img v-bind:src="[producto.foto]" alt="">
+                    </figcaption>
+                </a>
+                <div id="datos">
+                    <h3>{{producto.nombre}}</h3>
+                    <h5><a href="">{{producto.categoria}}</a></h5>
+                </div>
+                
+                <div id="precio">
+                    <p>${{producto.precio}}</p>
+                    <p v-if="producto.descuento>0" id="descuento">-%{{producto.descuento}}</p>
+                </div>
+                <button class="mandar" href="#Tienda">Añadir al carrito</button>
+                <button class="btn" @click="" href="#Tienda">Ver Más</button>
+            </article>
+        </section>
+
+        <footer id="contacto">
+            <div><p>COPYRIGHT@2022 - Luis Angel Suarez Flores</p></div>
+            <div><p>Tu Tienda de Ropa Artistica</p></div>
+            <div id="a_social">
+                <p>Visita nuestras Redes Sociales</p>
+                <a href="#Instagram">g</a>
+                <a href="#Facebook">f</a>
+                <a href="#Twitter">t</a>
+            </div>
+        </footer>
+
+        <script src="../../java/vue.js"></script>
+        <script src="../../java/codigo.js"></script>
+    </body>
+</html>

@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Oldenburg&family=Yusei+Magic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Splash&display=swap');
+
+@font-face {
+    font-family: 'social';
+    src: url('../fonts/SocialMedia-ZxpB.ttf');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 0px;
+}
+
+html{
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5{
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1{
+    font-size: 3rem; 
+}
+
+h2{
+    font-size: 2rem;
+    font-weight: bold;
+}
+h3{
+    font-size: 1.8rem;
+}
+
+h4{
+    font-size: 1.5rem;
+}
+
+h5{
+    font-size: 1.2rem;
+}
+p{
+    font-size: 1.4rem;
+    font-family: 'Rubik', sans-serif;
+}
+a{
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#cabecera{
+    box-shadow: 2px 2px 30px black;
+}
+
+header, .contenido, footer{
+    min-width: 320px;
+}
+
+#gerente, #menu-toggle{
+    display: none;
+}
+
+header{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0px;
+}
+    #banner{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    #bannerTB{
+        display: none;
+    }
+
+    /*#logotipo{
+        width: 75px;
+        display: inline-block;
+        vertical-align: middle;
+    }*/
+
+    .center{
+        text-align: center;
+    }
+
+    #menuUsuario{
+        z-index: 12;
+        position: absolute;
+        /*width: 100%;*/
+        top: 5px;
+        right: 10px;
+        display: inline-flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+    }
+
+    #menuUsuario a{
+        padding: 0;
+        margin: 0;
+    }
+    #menuUsuario img{
+        height: 40%;
+        width: 40%;
+        object-fit: cover;
+    }
+
+    .notiCar{
+        background-color: #e48789;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 50%;
+        font-size: 10px;
+        text-align: center;
+        color: white;
+    }
+
+        .notiCar label{
+            font-size: 5px;
+            color: white;
+        }
+
+    .btn{
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        font-size: 1rem;
+        padding: 7px 20px;
+        margin: 0px 10px 10px 20px;
+        display: inline-block;  
+        cursor: pointer;
+    }
+    .btn:hover{
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        border: 1px solid black;
+    }
+
+    .botones{
+        width: 100%;
+        display: flex;
+    }
+
+    .mandar {
+        display: none;
+        width: 110px;
+        height: 30px;
+        font-size: .8rem;
+        padding: 0;
+        margin: 0 auto 10px auto;
+        background-color: #449787;
+        border: 1px #449787 solid;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        margin: 0 auto;
+    }
+
+    .mandar:hover {
+        background-color: white ;
+        border: 1px #449787 solid;
+        color: #449787;
+    }
+
+    .marco:hover{
+        box-shadow: 5px 5px #888888;
+    }
+
+
+.menu-toggle{
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgb(0, 0, 0);
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    left: 5%;
+    top: 15px;
+}
+
+#menuPrincipal{
+    height: 0px;
+    width: 40px;
+    margin: 60px 0 0 5%;
+    transition: all 0.5s ease-in-out;
+    border-bottom: 1px solid black;
+    overflow: hidden;
+    background-color: white;
+}
+
+#menu-toggle:checked ~ #menuPrincipal{
+    height: 200px;
+    width: 50%;
+
+}
+    .opcion{
+        display: block;
+        font-size: 1rem;
+        color: rgb(0, 0, 0);
+        padding: 10px;
+    }
+
+    .opcion:hover{
+        color: rgb(104, 104, 104);
+        background-color: rgb(212, 212, 212);
+    }
+
+
+    /*////////////////////////////////SECCIONES///////////////////////*/
+.contenido{
+    padding: 2.5% 10px;
+}
+
+    #home{
+        background-color: white;
+        margin-top: 70px;
+        height: 320px;
+    }
+
+    #home article{
+        background-color: black;
+    }
+        
+        #home h1{
+            font-size: 3.3rem;
+            color:rgb(255, 255, 255);   
+            padding-top: 50px;    
+            font-family: 'Splash', cursive; 
+        }
+    #art ul{
+        width: 100%;
+    }
+    #art li{
+        display: inline-block;
+        width: 45%;
+        margin: 2.5%;
+    }
+    
+    #art img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 2px solid black;
+    }
+        #Sobre{
+            text-align: center;
+            background-color: white;
+        }
+
+        #Sobre figcaption{
+            display: none;
+            
+        }
+
+
+        #Tienda article{
+            display: inline-block;
+            width: 45%;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 2.5%;
+        }
+
+        #Tienda img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #Tienda p{
+            display: none;
+        }
+
+        #Tienda h3{
+            font-size: 1rem;   
+        }
+        #Tienda h5{
+            font-size: 0.8rem;
+        }
+
+        #datos{
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+            margin: 10px 0;
+            padding: 5px 10px;
+        }
+
+        .favorito {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent; /* Mitad de la base del triángulo */
+            border-right: 50px solid transparent; /* Mitad de la base del triángulo */
+            border-bottom: 100px solid red; /* Altura del triángulo y color de borde */
+            float: left;
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 15;
+          }
+
+          #cart{
+            margin: 100px;
+          }
+          #cartContent{
+            width: 100%;
+            display: inline-flex;
+            margin: 10px 0;
+          }
+          #cartImagen{
+            width: 25%;
+            height: 25%;
+            margin: 0 10px;
+          }
+          #cartImagen img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          #cartDatos{
+            width: 100%;
+            display: inline-flex;
+            flex-direction: column;
+          }
+          .cartNombre{
+            width: 80%;
+          }
+          .cartPrecio{
+            width: 40%;
+          }
+
+    footer{
+        position: relative;
+        bottom: 0px;
+        text-align: center;
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        font-size: 1rem;
+        padding: 20px 5%;
+    }
+
+    #contacto div{
+        display: inline-block;
+        width: 30%;
+        vertical-align: middle;
+    }
+
+    #a_social a{
+        font-size: 2rem;
+        margin: 20px;
+        /*background-color: #ffffff;*/
+        color: white;
+        font-family: social, cursive;
+    }
+
+    #burbujas{
+        width: 50%;
+        height: 50%;
+        overflow: hidden;
+    }
+    .burbuja{
+        border-radius: 50%;
+        background-color: rgba(0,255,255, 0.7);
+        /*width: 200px;
+        height: 200px;*/
+        position: absolute;
+        bottom: -150px;
+        display: none;
+    }

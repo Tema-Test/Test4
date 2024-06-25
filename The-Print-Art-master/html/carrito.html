@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/app.css" type="text/css"/>
+	<link rel="stylesheet" href="../css/app_tb.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/app_pc.css" type="text/css"/>
+	<link rel="stylesheet" href="../css/animacion.css" type="text/css"/>
+    <title>THE PRINT ART</title>
+</head>
+    <body>
+        <header id="cabecera">
+            <input type="checkbox" class="checkbox" id="menu-toggle" />
+            <label for="menu-toggle" class="menu-toggle center">&equiv;</label>
+                <nav id="menuPrincipal">
+                    <a class="opcion" href="../index.html">Inicio</a>
+                    <a class="opcion" href="#art">Arte</a>
+                    <a class="opcion" href="#Sobre">Sobre Nosotros</a>
+                    <a class="opcion" href="tienda.html">Tienda</a>
+                    <a class="opcion" href="#contacto">Contáctanos</a>
+                    <div id="menuUsuario">
+                        <label v-if="productoCarrito>0" class="notiCar">{{productoCarrito}}</label>
+                        <a class="opcion" href="carrito.html"><img src="../img/ico/cart.png" alt=""></a>
+                    </div>
+                </nav>
+        </header>
+
+        <section class="contenido" id="cart">
+            <div v-if="carrito == 0">
+                <h3>Tu carrito de compras esta vacio</h3>
+            </div>
+            <div id="cartContent" v-for="(carritoItems, index) in carrito" :key="index" v-if="carritoItems.id">
+                <div id="cartImagen">
+                    <figcaption><img v-bind:src="'../'+[carritoItems.foto]" v-bind:alt="[carritoItems.nombre]"></figcaption>
+                </div>
+                <div id="cartDatos">
+                    <div style="display: inline-flex;">
+                        <div id="nombre" class="cartNombre">
+                            <h3>{{carritoItems.nombre}}</h3>
+                        </div>
+                        <div id="precio" class="cartPrecio">
+                            <p>${{carritoItems.precio}}</p>
+                            <p v-if="carritoItems.descuento>0" id="descuento">-%{{carritoItems.descuento}}</p>
+                        </div>
+                    </div>
+                    <div style="display: inline-flex;">
+                        <p>{{carritoItems.descripcion}}</p>
+                    </div>
+                    <div style="display: inline-flex;">
+                        <button @click="cambiarCantidad(carritoItems, 'sumar')">+</button>
+                        <p>{{carritoItems.cantidad}}</p>
+                        <button @click="cambiarCantidad(carritoItems, 'restar')">-</button>
+                    </div>
+                </div>
+            </div>
+            <div v-if="carrito != 0">
+                <h1>Pago</h1>
+                <p>Subtotal (Pedidos: {{totalCantidad}}): ${{subtotal.toFixed(2)}}</p>
+                <p>IVA: ${{ iva.toFixed(2) }}</p>
+                <p>Total: ${{ total.toFixed(2) }}</p>
+                <button class="btn" @click="pagarProductos()">Proceder con el pago</button>
+            </div>
+        </section>
+
+        <div id="Tienda"></div>
+
+        <footer id="contacto">
+            <div><p>COPYRIGHT@2022 - Luis Angel Suarez Flores</p></div>
+            <div><p>Tu Tienda de Ropa Artistica</p></div>
+            <div id="a_social">
+                <p>Visita nuestras Redes Sociales</p>
+                <a href="#Instagram">g</a>
+                <a href="#Facebook">f</a>
+                <a href="#Twitter">t</a>
+            </div>
+        </footer>
+
+        <script src="../java/vue.js"></script>
+        <script src="../java/codigo.js"></script>
+    </body>
+</html>
